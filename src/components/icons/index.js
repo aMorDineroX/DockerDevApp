@@ -1,0 +1,5 @@
+export { default as House } from './House.vue'
+export { default as ChartLine } from './ChartLine.vue'
+export { default as Robot } from './Robot.vue'
+export { default as Tray } from './Tray.vue'
+export { default as User } from './User.vue'

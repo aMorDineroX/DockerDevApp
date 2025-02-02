@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142 91% 45%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 91% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 215 27% 8%;
+    --foreground: 0 0% 98%;
+    --card: 215 25% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 215 25% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 91% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 215 25% 18%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 215 25% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 25% 20%;
+    --input: 215 25% 16%;
+    --ring: 142 91% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+:root {
+  /* Light theme variables */
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-soft: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-card: #ffffff;
+  --color-card-hover: #f8fafc;
+  --color-input: #f8fafc;
+}
+
+:root.dark {
+  /* Dark theme variables */
+  --color-background: #111418;
+  --color-surface: #1e2329;
+  --color-surface-soft: #161a1f;
+  --color-border: #293038;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9ca3af;
+  --color-card: #1e2329;
+  --color-card-hover: #242931;
+  --color-input: #161a1f;
+}
+
+/* Common variables for both themes */
+:root, :root.dark {
+  --color-primary: #0bda5b;
+  --color-primary-hover: #0ac350;
+  --color-primary-soft: rgba(11, 218, 91, 0.1);
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-lg transition-colors duration-200;
+  }
+
+  .input {
+    @apply bg-input border border-border rounded-lg transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .quick-action-button {
+    @apply flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all;
+  }
+
+  .quick-action-button-primary {
+    @apply bg-[#0bda5b] text-black hover:bg-[#0ac350];
+  }
+
+  .quick-action-button-outline {
+    @apply border border-[#293038] text-white hover:bg-[#293038];
+  }
+}
+
+@layer utilities {
+  .crisp-edges {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 
+               'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  color-scheme: dark;
+}
